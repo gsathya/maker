@@ -3,12 +3,18 @@
   <head>
     <title> Experiment maker </title>
   </head>
-  
+
   <body>
     <p>Experiment maker</p>
+    <div id="experiment"></div>
 
     <script src="js/maker.js"></script>
     <script src="js/handlebars.js"></script>
+
+    <script src="skeleton.hbs" id="skeleton" type="text/x-handlebars-template">
+    {{imports}}
+    </script>
+
     <script>
     this.Maker();
     </script>
