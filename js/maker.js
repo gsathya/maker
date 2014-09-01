@@ -87,20 +87,29 @@
 
             if (primitives.http.checked){
                 config.primitives.push({name: "http", alias: "http"});
-                config.functions.push({
-                    module: 'http',
-                    method: document.getElementById("http_method").value,
-                    args: document.getElementById("http_args").value
-                });
+                var http_repeat = document.getElementById("http_repeat").value;
+
+                for(var i=0; i<http_repeat; i++){
+                    config.functions.push({
+                        module: 'http',
+                        method: document.getElementById("http_method").value,
+                        args: document.getElementById("http_args").value,
+                        repeat:  document.getElementById("http_repeat").value
+                    });
+                }
             }
 
             if (primitives.dns.checked){
                 config.primitives.push({name: "dnslib", alias: "dns"});
-                config.functions.push({
-                    module: 'dns',
-                    method: document.getElementById("dns_method").value,
-                    args: document.getElementById("dns_args").value
-                });
+
+                var dns_repeat = document.getElementById("dns_repeat").value
+                for(var i=0; i<dns_repeat; i++) {
+                    config.functions.push({
+                        module: 'dns',
+                        method: document.getElementById("dns_method").value,
+                        args: document.getElementById("dns_args").value,
+                    });
+                }
             }
 
             var exp_vars = document.getElementById("exp_vars").value;
