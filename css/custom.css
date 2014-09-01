@@ -4,8 +4,13 @@
 }
 
 #download {
-    vertical-align: center;
+    margin: 20px;
 }
+
+#make {
+    margin-bottom: 40px;
+}
+
 code {
     white-space: pre;
     word-break: normal;

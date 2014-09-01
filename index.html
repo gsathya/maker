@@ -77,14 +77,14 @@
           </div>
           <div class="panel-body">
             <div class="input-group">
-              <span class="input-group-addon">Module</span>
-              <input type="text" class="form-control" placeholder="http">
               <span class="input-group-addon">Method</span>
-              <input type="text" class="form-control" placeholder="get_request">
+              <input type="text" class="form-control" value="get_request">
+
               <span class="input-group-addon">Arguments</span>
-              <input type="text" class="form-control" placeholder="url">
+              <input type="text" class="form-control" value="line">
+
               <span class="input-group-addon">Repeat</span>
-              <input type="text" class="form-control" placeholder="1">              
+              <input type="text" class="form-control" value="1">
             </div> <!-- input-group -->
           </div> <!-- panel-body -->
         </div> <!-- panel panel-default -->
@@ -97,28 +97,32 @@
           </div>
           <div class="panel-body">
             <div class="input-group">
-              <span class="input-group-addon">Module</span>
-              <input type="text" class="form-control" placeholder="dns">
               <span class="input-group-addon">Method</span>
-              <input type="text" class="form-control" placeholder="get_ips">
+              <input type="text" class="form-control" value="get_ips">
               <span class="input-group-addon">Arguments</span>
-              <input type="text" class="form-control" placeholder="ip">
+              <input type="text" class="form-control" value="ip">
               <span class="input-group-addon">Repeat</span>
-              <input type="text" class="form-control" placeholder="1">
+              <input type="text" class="form-control" value="1">
             </div> <!-- input-group -->
           </div> <!-- panel-body -->
         </div> <!-- panel panel-default -->
       </div> <!-- row -->
 
-      <div class="row">
+      <button class="btn btn-lg btn-default" href="#" id="make">Make</button>
+
+      <div id="code">
+        <div class="row">
           <div id="editor"></div>
           <button class="btn btn-lg btn-default" href="#" id="download">Download</button>
-      </div>
+        </div>
 
 
-      <div class="footer">
-        <p>An experiment maker, by <a href="https://www.github.com/gsathya">@gsathya</a>.</p>
+        <div class="footer">
+          <p>An experiment maker, by <a href="https://www.github.com/gsathya">@gsathya</a>.</p>
+        </div>
       </div>
+    </div> <!-- /container -->
+
     <script src="js/maker.js"></script>
     <script src="js/handlebars.js"></script>
     <script src="js/FileSaver.js"></script>
@@ -155,6 +159,6 @@ class {{class_name}}(Experiment):
     </script>
 
 
-    </div> <!-- /container -->
+
   </body>
 </html>
