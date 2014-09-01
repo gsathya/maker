@@ -63,7 +63,7 @@ class {{class_name}}(Experiment):
     name = "{{name}}"
 
     def __init__(self, input_file):
-        {{#each vars}}self.{{name}} = {{{value}}};
+        {{#each vars}}self.{{name}} = {{{value}}}
         {{/each}}
 
     def run(self):
