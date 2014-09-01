@@ -1,17 +1,5 @@
 (function(){
     function Maker() {
-        // import the required primitives
-        Handlebars.registerHelper('import', function(items, options) {
-            var out = '';
-
-            for(var i=0; i<items.length; i++) {
-                out += "import centinel.primitives.";
-                out += items[i] + " as " + items[i] + "\n";
-            }
-
-            return out;
-        });
-
         var source = document.getElementById("skeleton").innerHTML;
         var template = Handlebars.compile(source);
         var data = {
