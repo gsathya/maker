@@ -23,6 +23,10 @@
     display: none;
 }
 
+#footer {
+    text-align: center;
+}
+
 code {
     white-space: pre;
     word-break: normal;
