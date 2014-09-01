@@ -15,6 +15,14 @@
     display: none;
 }
 
+#http_primitive_settings {
+    display: none;
+}
+
+#dns_primitive_settings {
+    display: none;
+}
+
 code {
     white-space: pre;
     word-break: normal;

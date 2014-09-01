@@ -30,7 +30,7 @@
         download_button.addEventListener("click", function(){
             var code = new Blob([editor.getValue()], {type: "text/x-python;charset=utf-8"});
             console.log(editor.getValue());
-            saveAs(code, data.name + ".py"); 
+            saveAs(code, data.name + ".py");
         });
 
         var make_button = document.getElementById("make");
@@ -42,6 +42,27 @@
             var code_div = document.getElementById("code");
             code_div.style.display = 'block';
         });
+
+        var http_primitive_checkbox = document.getElementById("http_primitive_checkbox")
+        http_primitive_checkbox.addEventListener("click", function(){
+            var http_primitive_panel = document.getElementById("http_primitive_settings")
+            if(this.checked) {
+                http_primitive_panel.style.display = 'block';
+            } else {
+                http_primitive_panel.style.display = 'none';
+            }
+        })
+
+        var dns_primitive_checkbox = document.getElementById("dns_primitive_checkbox")
+        dns_primitive_checkbox.addEventListener("click", function(){
+            var dns_primitive_panel = document.getElementById("dns_primitive_settings")
+            if(this.checked) {
+                dns_primitive_panel.style.display = 'block';
+            } else {
+                dns_primitive_panel.style.display = 'none';
+            }
+        })
+
     };
 
     this.Maker = Maker;
