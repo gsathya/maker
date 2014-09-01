@@ -37,10 +37,10 @@
           <div class="panel-body">
             <div class="checkbox">
               <label>
-                <input id="http_primitive_checkbox" type="checkbox"> HTTP
+                <input id="http_primitive_checkbox" type="checkbox" checked="false"> HTTP
               </label>
               <label>
-                <input id="dns_primitive_checkbox" type="checkbox"> DNS
+                <input id="dns_primitive_checkbox" type="checkbox" checked="false"> DNS
               </label>
             </div> <!-- checkbox -->
           </div> <!-- panel-body -->
@@ -54,17 +54,18 @@
           </div>
           <div class="panel-body">
             <div class="input-group">
-              <span class="input-group-addon">Experiment name</span>
-              <input type="text" class="form-control" placeholder="centinel_experiment">
+              <span id="exp_name" class="input-group-addon">Experiment name</span>
+              <input type="text" class="form-control" value="centinel_experiment">
+
               <span class="input-group-addon">Class name</span>
-              <input type="text" class="form-control" placeholder="CentinelExperiment">
+              <input id="class_name"type="text" class="form-control" value="CentinelExperiment">
             </div> <!-- input-group -->
           </div> <!-- panel-body -->
 
           <div class="panel-body">
             <div class="input-group">
               <span class="input-group-addon">Variables</span>
-              <input type="text" class="form-control" placeholder="results = [ ], input_file=input_file">
+              <input id="exp_vars" type="text" class="form-control" value="input_file=input_file,results=[],path='/'">
             </div> <!-- input-group -->
           </div> <!-- panel-body -->
         </div> <!-- panel panel-default -->

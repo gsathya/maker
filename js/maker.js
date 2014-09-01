@@ -55,6 +55,7 @@
         });
 
         var http_primitive_checkbox = document.getElementById("http_primitive_checkbox")
+        http_primitive_checkbox.checked = primitives.http.checked;
         http_primitive_checkbox.addEventListener("click", function(){
             var http_primitive_panel = document.getElementById("http_primitive_settings")
             primitives.http.checked = this.checked;
@@ -66,6 +67,7 @@
         });
 
         var dns_primitive_checkbox = document.getElementById("dns_primitive_checkbox")
+        dns_primitive_checkbox.checked = primitives.dns.checked;
         dns_primitive_checkbox.addEventListener("click", function(){
             var dns_primitive_panel = document.getElementById("dns_primitive_settings")
             primitives.dns.checked = this.checked;
@@ -100,6 +102,18 @@
                     args: document.getElementById("dns_args").value
                 });
             }
+
+            var exp_vars = document.getElementById("exp_vars").value;
+            exp_vars = exp_vars.split(',');
+            for (var i=0; i<exp_vars.length; i++){
+                var exp_var = exp_vars[i].split('=');
+                config.vars.push({name: exp_var[0], value: exp_var[1]});
+            }
+
+            config.name = document.getElementById("exp_name").value;
+            config.class_name = document.getElementById("class_name").value;
+
+            return config
         };
     };
 
