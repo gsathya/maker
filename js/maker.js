@@ -12,12 +12,6 @@
             return out;
         });
 
-        Handlebars.registerHelper('instance_vars', function(item){
-            var out = '';
-            out += "self." + item.name + " = " + item.value + "\n";
-            return out;
-        });
-
         var source = document.getElementById("skeleton").innerHTML;
         var template = Handlebars.compile(source);
         var data = {
