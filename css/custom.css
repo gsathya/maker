@@ -11,6 +11,10 @@
     margin-bottom: 40px;
 }
 
+#code {
+    display: none;
+}
+
 code {
     white-space: pre;
     word-break: normal;

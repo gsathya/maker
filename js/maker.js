@@ -25,14 +25,22 @@
         var editor = ace.edit("editor");
         editor.setTheme("ace/theme/monokai");
         editor.getSession().setMode("ace/mode/python");
-        editor.setValue(template(data), 1)
 
         var download_button = document.getElementById("download");
-
         download_button.addEventListener("click", function(){
             var code = new Blob([editor.getValue()], {type: "text/x-python;charset=utf-8"});
             console.log(editor.getValue());
             saveAs(code, data.name + ".py"); 
+        });
+
+        var make_button = document.getElementById("make");
+        make_button.addEventListener("click", function(){
+            // compile the code
+            editor.setValue(template(data), 1)
+
+            // make it visible
+            var code_div = document.getElementById("code");
+            code_div.style.display = 'block';
         });
     };
 
