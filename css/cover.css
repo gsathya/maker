@@ -34,6 +34,10 @@ body {
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
+.lead {
+    text-align: center;
+}
+
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
@@ -124,6 +128,7 @@ body {
 .mastfoot {
   color: #999; /* IE8 proofing */
   color: rgba(255,255,255,.5);
+  text-align: center;
 }
 
 
