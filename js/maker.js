@@ -14,7 +14,11 @@
                 {name: "results", value: "[]"},
                 {name: "path", value: "'/'"}
             ],
-            functions: "http.get_request(line)"
+            functions: [{
+                module: "http",
+                method: "get_request",
+                args: "line, self.path"
+            }]
         };
 
         var output = document.getElementById("experiment");

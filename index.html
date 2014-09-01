@@ -29,8 +29,9 @@ class {{class_name}}(Experiment):
             self.main(line.strip())
 
     def main(self, line):
-        result = {{functions}}
+        {{#each functions}}result = {{module}}.{{method}}({{args}})
         self.results.append(result)
+        {{/each}}
     </script>
 
     <script>
