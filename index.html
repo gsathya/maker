@@ -54,8 +54,8 @@
           </div>
           <div class="panel-body">
             <div class="input-group">
-              <span id="exp_name" class="input-group-addon">Experiment name</span>
-              <input type="text" class="form-control" value="centinel_experiment">
+              <span class="input-group-addon">Experiment name</span>
+              <input id="exp_name" type="text" class="form-control" value="centinel_experiment">
 
               <span class="input-group-addon">Class name</span>
               <input id="class_name"type="text" class="form-control" value="CentinelExperiment">
@@ -149,7 +149,7 @@ class {{class_name}}(Experiment):
             self.main(line.strip())
 
     def main(self, line):
-        {{#each functions}}result = {{module}}.{{method}}({{args}})
+        {{#each functions}}result = {{module}}.{{method}}({{{args}}})
         self.results.append(result)
         {{/each}}
     </script>
