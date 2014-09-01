@@ -3,7 +3,10 @@
         var source = document.getElementById("skeleton").innerHTML;
         var template = Handlebars.compile(source);
         var data = {
-            primitives: ["http", "dnslib"],
+            primitives: [
+                {name: "http", alias: "http"},
+                {name: "dnslib", alias: "dns"}
+            ],
             class_name: "HTTPRequestExperiment",
             name: "http_request",
             vars: [

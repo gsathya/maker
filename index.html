@@ -13,7 +13,7 @@
     <script src="js/handlebars.js"></script>
 
     <script src="skeleton.hbs" id="skeleton" type="text/x-handlebars-template">
-{{#each primitives}}import centinel.primitives.{{this}} as {{this}}
+{{#each primitives}}import centinel.primitives.{{name}} as {{alias}}
 {{/each}}
 from centinel.experiment import Experiment
 
