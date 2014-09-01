@@ -1,16 +1,58 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="en">
   <head>
-    <title> Experiment maker </title>
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Maker</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/cover.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
   </head>
 
   <body>
-    <code id="experiment"></code>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Maker</h3>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="http://www.github.com/gsathya">Source code</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <div id="editor"></div>    
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>An experiment maker for centinel, by <a href="https://github.com/gsathya">@gsathya</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
 
     <script src="js/maker.js"></script>
     <script src="js/handlebars.js"></script>
+    <script src="js/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 
     <script src="skeleton.hbs" id="skeleton" type="text/x-handlebars-template">
 {{#each primitives}}import centinel.primitives.{{name}} as {{alias}}
@@ -21,7 +63,7 @@ class {{class_name}}(Experiment):
     name = "{{name}}"
 
     def __init__(self, input_file):
-        {{#each vars}}self.{{name}} = {{value}};
+        {{#each vars}}self.{{name}} = {{{value}}};
         {{/each}}
 
     def run(self):
@@ -35,6 +77,10 @@ class {{class_name}}(Experiment):
     </script>
 
     <script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/python");
+
     this.Maker();
     </script>
 

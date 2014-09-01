@@ -2,6 +2,7 @@
     function Maker() {
         var source = document.getElementById("skeleton").innerHTML;
         var template = Handlebars.compile(source);
+
         var data = {
             primitives: [
                 {name: "http", alias: "http"},
@@ -21,8 +22,10 @@
             }]
         };
 
-        var output = document.getElementById("experiment");
-        output.innerHTML = template(data);
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.getSession().setMode("ace/mode/python");
+        editor.setValue(template(data), 1)
     };
 
     this.Maker = Maker;
