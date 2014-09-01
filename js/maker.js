@@ -51,7 +51,7 @@
             } else {
                 http_primitive_panel.style.display = 'none';
             }
-        })
+        });
 
         var dns_primitive_checkbox = document.getElementById("dns_primitive_checkbox")
         dns_primitive_checkbox.addEventListener("click", function(){
@@ -61,7 +61,7 @@
             } else {
                 dns_primitive_panel.style.display = 'none';
             }
-        })
+        });
 
     };
 
