@@ -13,23 +13,22 @@
     <script src="js/handlebars.js"></script>
 
     <script src="skeleton.hbs" id="skeleton" type="text/x-handlebars-template">
-    {{imports}}
-    
-    from centinel.experiment import Experiment
-    
-    class HTTPRequestExperiment(Experiment):
-        name = "{{name}}"
+{{#import primitives}}{{/import}}
+from centinel.experiment import Experiment
+
+class {{class_name}}(Experiment):
+    name = "{{name}}"
 
     def __init__(self, input_file):
-        self.input_file = input_file
-        self.results = []
+        {{#each vars}}self.{{name}} = {{value}};
+        {{/each}}
 
     def run(self):
         for line in self.input_file:
             self.main(line.strip())
 
     def main(self, line):
-        result = {{primitive}}
+        result = {{functions}}
         self.results.append(result)
     </script>
 
