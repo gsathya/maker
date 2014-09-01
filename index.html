@@ -78,13 +78,13 @@
           <div class="panel-body">
             <div class="input-group">
               <span class="input-group-addon">Method</span>
-              <input type="text" class="form-control" value="get_request">
+              <input id="http_method" type="text" class="form-control" value="get_request">
 
               <span class="input-group-addon">Arguments</span>
-              <input type="text" class="form-control" value="line">
+              <input id="http_args" type="text" class="form-control" value="line, self.path">
 
               <span class="input-group-addon">Repeat</span>
-              <input type="text" class="form-control" value="1">
+              <input id="http_repeat" type="text" class="form-control" value="1">
             </div> <!-- input-group -->
           </div> <!-- panel-body -->
         </div> <!-- panel panel-default -->
@@ -98,11 +98,13 @@
           <div class="panel-body">
             <div class="input-group">
               <span class="input-group-addon">Method</span>
-              <input type="text" class="form-control" value="get_ips">
+              <input id="dns_method" type="text" class="form-control" value="get_ips">
+
               <span class="input-group-addon">Arguments</span>
-              <input type="text" class="form-control" value="ip">
+              <input id="dns_args" type="text" class="form-control" value="ip">
+
               <span class="input-group-addon">Repeat</span>
-              <input type="text" class="form-control" value="1">
+              <input id="dns_repeat" type="text" class="form-control" value="1">
             </div> <!-- input-group -->
           </div> <!-- panel-body -->
         </div> <!-- panel panel-default -->

@@ -2,10 +2,10 @@
     function Maker() {
         var primitives = {
             http: {
-                checked: 'false'
+                checked: false
             },
             dns: {
-                checked: 'false'
+                checked: false
             }
         };
 
@@ -85,10 +85,20 @@
 
             if (primitives.http.checked){
                 config.primitives.push({name: "http", alias: "http"});
+                config.functions.push({
+                    module: 'http',
+                    method: document.getElementById("http_method").value,
+                    args: document.getElementById("http_args").value
+                });
             }
 
             if (primitives.dns.checked){
                 config.primitives.push({name: "dnslib", alias: "dns"});
+                config.functions.push({
+                    module: 'dns',
+                    method: document.getElementById("dns_method").value,
+                    args: document.getElementById("dns_args").value
+                });
             }
         };
     };
