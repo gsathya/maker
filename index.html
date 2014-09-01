@@ -4,55 +4,121 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="The experiment maker">
+    <meta name="author" content="gsathya">
 
     <title>Maker</title>
 
+    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/cover.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
     <link href="css/custom.css" rel="stylesheet">
+    <link href="css/jumbotron-narrow.css" rel="stylesheet">
+
   </head>
 
   <body>
 
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Maker</h3>
-              <ul class="nav masthead-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="http://www.github.com/gsathya/maker">Source code</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <div id="editor"></div>
-              <p class="lead">
-                <a class="btn btn-lg btn-default" href="#" id="download">Download</a>
-              </p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>An experiment maker for centinel, by <a href="https://github.com/gsathya">@gsathya</a>.</p>
-            </div>
-          </div>
-
-        </div>
-
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="https//www.github.com/gsathya">Source code</a></li>
+        </ul>
+        <h3 class="text-muted">Maker</h3>
       </div>
 
-    </div>
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Primitives</h3>
+          </div>
+          <div class="panel-body">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> HTTP
+              </label>
+              <label>
+                <input type="checkbox"> DNS
+              </label>
+            </div> <!-- checkbox -->
+          </div> <!-- panel-body -->
+        </div> <!-- panel panel-default -->
+      </div> <!-- row -->
+
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Experiment details</h3>
+          </div>
+          <div class="panel-body">
+            <div class="input-group">
+              <span class="input-group-addon">Experiment name</span>
+              <input type="text" class="form-control" placeholder="centinel_experiment">
+              <span class="input-group-addon">Class name</span>
+              <input type="text" class="form-control" placeholder="CentinelExperiment">
+            </div> <!-- input-group -->
+          </div> <!-- panel-body -->
+
+          <div class="panel-body">
+            <div class="input-group">
+              <span class="input-group-addon">Variables</span>
+              <input type="text" class="form-control" placeholder="results = [ ], input_file=input_file">
+            </div> <!-- input-group -->
+          </div> <!-- panel-body -->
+        </div> <!-- panel panel-default -->
+      </div> <!-- row -->
+
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">HTTP</h3>
+          </div>
+          <div class="panel-body">
+            <div class="input-group">
+              <span class="input-group-addon">Module</span>
+              <input type="text" class="form-control" placeholder="http">
+              <span class="input-group-addon">Method</span>
+              <input type="text" class="form-control" placeholder="get_request">
+              <span class="input-group-addon">Arguments</span>
+              <input type="text" class="form-control" placeholder="url">
+              <span class="input-group-addon">Repeat</span>
+              <input type="text" class="form-control" placeholder="1">              
+            </div> <!-- input-group -->
+          </div> <!-- panel-body -->
+        </div> <!-- panel panel-default -->
+      </div> <!-- row -->
+
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">DNS</h3>
+          </div>
+          <div class="panel-body">
+            <div class="input-group">
+              <span class="input-group-addon">Module</span>
+              <input type="text" class="form-control" placeholder="dns">
+              <span class="input-group-addon">Method</span>
+              <input type="text" class="form-control" placeholder="get_ips">
+              <span class="input-group-addon">Arguments</span>
+              <input type="text" class="form-control" placeholder="ip">
+              <span class="input-group-addon">Repeat</span>
+              <input type="text" class="form-control" placeholder="1">
+            </div> <!-- input-group -->
+          </div> <!-- panel-body -->
+        </div> <!-- panel panel-default -->
+      </div> <!-- row -->
+
+      <div class="row">
+          <div id="editor"></div>
+          <button class="btn btn-lg btn-default" href="#" id="download">Download</button>
+      </div>
 
 
+      <div class="footer">
+        <p><a href="https://www.github.com/gsathya">@gsathya</a></p>
+      </div>
     <script src="js/maker.js"></script>
     <script src="js/handlebars.js"></script>
     <script src="js/FileSaver.js"></script>
@@ -88,5 +154,7 @@ class {{class_name}}(Experiment):
     this.Maker();
     </script>
 
+
+    </div> <!-- /container -->
   </body>
 </html>

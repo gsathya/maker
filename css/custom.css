@@ -1,12 +1,11 @@
-body {
-    overflow: hidden;
-}
-
 #editor {
     height: 500px;
     width: auto;
 }
 
+#download {
+    vertical-align: center;
+}
 code {
     white-space: pre;
     word-break: normal;
