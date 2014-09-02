@@ -2,7 +2,8 @@
     function Maker() {
         var primitives = {
             http: {
-                checked: false
+                checked: false,
+                headers: false
             },
             dns: {
                 checked: false
@@ -59,6 +60,18 @@
             }
         });
 
+        var http_headers_checkbox = document.getElementById("http_headers")
+        http_headers_checkbox.checked = primitives.http.headers;
+        http_headers_checkbox.addEventListener("click", function(){
+            var http_headers_panel = document.getElementById("http_headers_settings")
+            primitives.http.headers = this.checked;
+            if(this.checked) {
+                http_headers_panel.style.display = 'block';
+            } else {
+                http_headers_panel.style.display = 'none';
+            }
+        });
+
         var getData = function(){
             var config = {
                 primitives: [],
@@ -69,13 +82,16 @@
             if (primitives.http.checked){
                 config.primitives.push({name: "http", alias: "http"});
                 var http_repeat = document.getElementById("http_repeat").value;
-
+                
                 for(var i=0; i<http_repeat; i++){
                     config.functions.push({
                         module: 'http',
                         method: document.getElementById("http_method").value,
                         args: document.getElementById("http_args").value,
-                        repeat:  document.getElementById("http_repeat").value
+                        headers: {
+                            name: 'Content-Type',
+                            value: '"'+document.getElementById("header_value").value+'"'
+                        }
                     });
                 }
             }

@@ -82,12 +82,25 @@
               <input id="http_method" type="text" class="form-control" value="get_request">
 
               <span class="input-group-addon">Arguments</span>
-              <input id="http_args" type="text" class="form-control" value="line, self.path">
+              <input id="http_args" type="text" class="form-control" value="line, self.path, headers">
 
               <span class="input-group-addon">Repeat</span>
               <input id="http_repeat" type="text" class="form-control" value="1">
-            </div> <!-- input-group -->
-          </div> <!-- panel-body -->
+            </div>
+            <div class="panel-body">
+              <div class="checkbox">
+                <label>
+                  <input id="http_headers" type="checkbox"> Custom Headers
+                </label>
+              </div> <!-- checkbox -->
+            </div>
+            <div class="panel-body" id="http_headers_settings">
+              <div class="input-group">
+                <span class="input-group-addon">Content-Type</span>
+                <input id="header_value" type="text" class="form-control" value="application/json">
+              </div> <!-- input-group -->
+            </div> <!-- panel-body -->
+          </div> <!-- input-group -->
         </div> <!-- panel panel-default -->
       </div> <!-- row -->
 
@@ -149,7 +162,8 @@ class {{class_name}}(Experiment):
             self.main(line.strip())
 
     def main(self, line):
-        {{#each functions}}result = {{module}}.{{method}}({{{args}}})
+        {{#each functions}}headers = { {{#if headers}}{{{headers.name}}}: {{{headers.value}}}{{else}}None{{/if}} }
+        result = {{module}}.{{method}}({{{args}}})
         self.results.append(result)
         {{/each}}
     </script>

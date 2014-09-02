@@ -23,6 +23,10 @@
     display: none;
 }
 
+#http_headers_settings {
+    display: none;
+}
+
 .footer {
     text-align: center;
 }
