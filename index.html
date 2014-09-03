@@ -151,7 +151,7 @@
 from centinel.experiment import Experiment
 
 class {{class_name}}(Experiment):
-    name = "{{name}}"
+    name = "{{exp_name}}"
 
     def __init__(self, input_file):
         {{#each vars}}self.{{name}} = {{{value}}}
@@ -162,7 +162,7 @@ class {{class_name}}(Experiment):
             self.main(line.strip())
 
     def main(self, line):
-        {{#each functions}}headers = { {{#if headers}}{{{headers.name}}}: {{{headers.value}}}{{else}}None{{/if}} }
+        {{#each functions}}{{#if headers}}headers ={ {{{headers.name}}}: {{{headers.value}}} } {{/if}}
         result = {{module}}.{{method}}({{{args}}})
         self.results.append(result)
         {{/each}}

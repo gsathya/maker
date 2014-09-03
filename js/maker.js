@@ -116,7 +116,7 @@
                 config.vars.push({name: exp_var[0], value: exp_var[1]});
             }
 
-            config.name = document.getElementById("exp_name").value;
+            config.exp_name = document.getElementById("exp_name").value;
             config.class_name = document.getElementById("class_name").value;
 
             return config
