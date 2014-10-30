@@ -1,5 +1,7 @@
 (function(){
     function Maker() {
+        var data;
+        
         var primitives = {
             http: {
                 checked: false,
@@ -21,12 +23,17 @@
         download_button.addEventListener("click", function(){
             var code = new Blob([editor.getValue()], {type: "text/x-python;charset=utf-8"});
             console.log(editor.getValue());
-            saveAs(code, data.name + ".py");
+            saveAs(code, data.exp_name + ".py");
+
+            var url_element = document.getElementById("input_urls");
+            var urls = new Blob([url_element.value], {type: "text;charset=utf-8"});
+            saveAs(urls, data.exp_name + ".txt");
+
         });
 
         var make_button = document.getElementById("make");
         make_button.addEventListener("click", function(){
-            var data = getData();
+            data = getData();
 
             // compile the code
             editor.setValue(template(data), 1)
@@ -84,9 +91,10 @@
                 var http_repeat = document.getElementById("http_repeat").value;
                 
                 for(var i=0; i<http_repeat; i++){
+                    var http_method = $('.selectpicker').val();
                     var http_header = {
                         module: 'http',
-                        method: document.getElementById("http_method").value,
+                        method: http_method,
                         args: document.getElementById("http_args").value,
                     };
                     

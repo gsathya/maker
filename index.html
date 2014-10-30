@@ -79,8 +79,11 @@
           <div class="panel-body">
             <div class="input-group">
               <span class="input-group-addon">Method</span>
-              <input id="http_method" type="text" class="form-control" value="get_request">
-
+              <div class="input-group-btn">
+                <select class="selectpicker">
+                  <option>get_request</option>
+                </select>
+              </div><!-- /btn-group -->
               <span class="input-group-addon">Arguments</span>
               <input id="http_args" type="text" class="form-control" value="line, self.path, headers">
 
@@ -124,6 +127,20 @@
         </div> <!-- panel panel-default -->
       </div> <!-- row -->
 
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Input URLs</h3>
+          </div>
+          <div class="panel-body">
+            <div class="input-group">
+              <span class="input-group-addon">URLs</span>
+              <input id="input_urls" type="text" class="form-control" value="www.google.com">
+            </div> <!-- input-group -->
+          </div> <!-- panel-body -->
+        </div> <!-- panel panel-default -->
+      </div> <!-- row -->
+
       <button class="btn btn-lg btn-default" href="#" id="make">Make</button>
 
       <div id="code">
@@ -135,7 +152,7 @@
 
       </div>
         <div class="footer">
-          <p>An experiment maker, by <a href="https://www.github.com/gsathya">@gsathya</a>.</p>
+          <p>An experiment maker.</p>
         </div>
 
     </div> <!-- /container -->
@@ -143,6 +160,9 @@
     <script src="js/maker.js"></script>
     <script src="js/handlebars.js"></script>
     <script src="js/FileSaver.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
     <script src="js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 
     <script src="skeleton.hbs" id="skeleton" type="text/x-handlebars-template">
