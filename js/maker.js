@@ -84,15 +84,20 @@
                 var http_repeat = document.getElementById("http_repeat").value;
                 
                 for(var i=0; i<http_repeat; i++){
-                    config.functions.push({
+                    var http_header = {
                         module: 'http',
                         method: document.getElementById("http_method").value,
                         args: document.getElementById("http_args").value,
-                        headers: {
+                    };
+                    
+                    if(primitives.http.headers){
+                        http_header.headers = {
                             name: 'Content-Type',
                             value: '"'+document.getElementById("header_value").value+'"'
-                        }
-                    });
+                        };
+                    };
+
+                    config.functions.push(http_header);
                 }
             }
 
